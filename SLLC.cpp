@@ -27,19 +27,6 @@ void InsFront(int nilai){
     }
 }
 
-void Display(){
-    node *baru=new node;
-    baru=head;
-    if (isEmpty()==0){
-        cout<<"\n\n Data yang ada dalam list \n\n";
-    while(baru!=NULL){
-        cout<<baru->data<<" ";
-        baru=baru->next;
-    }
-    }else
-        cout<<"masih kosong";
-}
-
 void InsBack(int nilai){
     node *baru, *bantu;
     baru=new node;
@@ -58,7 +45,19 @@ void InsBack(int nilai){
     cout<<"\n\n Data dimasukkan ke dalam list \n\n";
 }
 
- void DelFront()
+void Display(){
+    node *baru=new node;
+    baru=head;
+    if (isEmpty()==0){
+        cout<<"\n\n Data yang ada dalam list \n\n";
+    while(baru!=NULL){
+        cout<<baru->data<<" ";
+        baru=baru->next;
+    	}
+    }
+}
+
+void DelFront()
   {
     node *baru=new node;
     baru=head;
@@ -66,7 +65,16 @@ void InsBack(int nilai){
     delete baru;
   }
 
-int main (){
-    int nilai;
-    InsFront(nilai);
+void DelBack(){
+    node *after=new node;
+    node *before=new node;
+    after=head;
+    while(after->next!=NULL)
+    {
+      before=after;
+      after=after->next;
+    }
+    tail=before;
+    before->next=NULL;
+    delete after;
 }
