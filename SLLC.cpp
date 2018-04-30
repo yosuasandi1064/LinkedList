@@ -3,7 +3,6 @@
   Yosua Sandi Susanto     - 1717051064
   Lofanny Wahyu Dandi     - 1757051010
   */
-
 #include <iostream>
 using namespace std;
 
@@ -31,7 +30,7 @@ void InsFront(int nilai){
         baru->next=head;
         head=baru;
     }
-    cout<<"\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+    cout<<"\n Data "<<nilai<<" dimasukkan ke dalam list \n";
 }
 
 void InsBack(int nilai){
@@ -49,7 +48,7 @@ void InsBack(int nilai){
         }
         bantu->next=baru;
     }
-    cout<<"\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+    cout<<"\n Data "<<nilai<<" dimasukkan ke dalam list \n";
 }
 
 void Display(){
@@ -101,7 +100,7 @@ void InsertPos(int letak, int nilai){
     before->next=baru;
     baru->next=after;
 
-    cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+    cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n";
 }
 
 int main (){
@@ -111,7 +110,6 @@ int main (){
     cout<<"3. Hapus Depan\n";
     cout<<"4. Hapus Belakang\n";
     cout<<"5. Insert Sesuai letak\n";
-    cout<<"6. Tampilkan Data\n\n";
     menu:
     int pil;
     int nilai, letak;
@@ -120,10 +118,12 @@ int main (){
         case 1 : cout<<"Masukkan data = ";
                  cin>>nilai;
                  InsFront(nilai);
+                 Display();
                  goto menu;
         case 2 : cout<<"Masukkan data = ";
                  cin>>nilai;
                  InsBack(nilai);
+                 Display();
                  goto menu;
         case 3 : DelFront();
                  cout<<"\nBerhasil di hapus.\n";
@@ -136,8 +136,7 @@ int main (){
         case 5 : cout<<"Masukkan Letak = ";cin>>letak;
                  cout<<"Masukkan Nilai = ";cin>>nilai;
                  InsertPos(letak,nilai);
-                 goto menu;
-        case 6 : Display();
+                 Display();
                  goto menu;
     }
     return 0;
