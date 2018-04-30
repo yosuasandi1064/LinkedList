@@ -1,3 +1,9 @@
+/*Muhammad Rifki Setiawan - 1717051004
+  Muhammad Rama Wicaksono - 1717051062
+  Yosua Sandi Susanto     - 1717051064
+  Lofanny Wahyu Dandi     - 1757051010
+  */
+
 #include <iostream>
 using namespace std;
 
@@ -5,7 +11,7 @@ struct node{
     int data;
     node *next;
 };
-    node *head, *tail;
+node *head, *tail;
 
 int isEmpty() {
 	if (head == NULL)
@@ -25,7 +31,7 @@ void InsFront(int nilai){
         baru->next=head;
         head=baru;
     }
-    cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+    cout<<"\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
 }
 
 void InsBack(int nilai){
@@ -43,14 +49,14 @@ void InsBack(int nilai){
         }
         bantu->next=baru;
     }
-    cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+    cout<<"\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
 }
 
 void Display(){
     node *baru=new node;
     baru=head;
     if (isEmpty()==0){
-        cout<<"\n\n Data yang ada dalam list \n\n";
+        cout<<"\n Data yang ada dalam list \n\n";
     while(baru!=NULL){
         cout<<baru->data<<" ";
         baru=baru->next;
@@ -99,7 +105,6 @@ void InsertPos(int letak, int nilai){
 }
 
 int main (){
-    menu:
     cout<<"LINKED LIST\n\n";
     cout<<"1. Insert Depan\n";
     cout<<"2. Insert Belakang\n";
@@ -107,6 +112,7 @@ int main (){
     cout<<"4. Hapus Belakang\n";
     cout<<"5. Insert Sesuai letak\n";
     cout<<"6. Tampilkan Data\n\n";
+    menu:
     int pil;
     int nilai, letak;
     cout<<"Masukkan Pilihan = ";cin>>pil;
@@ -120,8 +126,12 @@ int main (){
                  InsBack(nilai);
                  goto menu;
         case 3 : DelFront();
+                 cout<<"\nBerhasil di hapus.\n";
+                 Display();
                  goto menu;
         case 4 : DelBack();
+                 cout<<"\nBerhasil di hapus.\n";
+                 Display();
                  goto menu;
         case 5 : cout<<"Masukkan Letak = ";cin>>letak;
                  cout<<"Masukkan Nilai = ";cin>>nilai;
@@ -130,4 +140,5 @@ int main (){
         case 6 : Display();
                  goto menu;
     }
+    return 0;
 }
