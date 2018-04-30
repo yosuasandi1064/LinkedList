@@ -3,8 +3,8 @@
   Yosua Sandi Susanto     - 1717051064
   Lofanny Wahyu Dandi     - 1757051010
   */
-
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 struct node{
@@ -140,6 +140,8 @@ int main (){
                  InsertPos(letak,nilai);
                  Display();
                  goto menu;
+        case 6 : cout<<"\n\nTERIMA KASIH ^^\n";
+                 exit(0);
     }
-    while (pil != 6);
+    return 0;
 }
