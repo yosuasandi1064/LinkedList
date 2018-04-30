@@ -111,7 +111,7 @@ int main (){
     cout<<"3. Hapus Depan\n";
     cout<<"4. Hapus Belakang\n";
     cout<<"5. Insert Sesuai letak\n";
-    cout<<"6. Keluar Program\n";
+    cout<<"6. Keluar Program\n\n";
     menu:
     int pil;
     int nilai, letak;
@@ -135,13 +135,15 @@ int main (){
                  cout<<"\nBerhasil di hapus.\n";
                  Display();
                  goto menu;
-        case 5 : cout<<"Masukkan Letak = ";cin>>letak;
+        case 5 : cout<<"Masukkan Letak ke Berapa = ";cin>>letak;
                  cout<<"Masukkan Nilai = ";cin>>nilai;
                  InsertPos(letak,nilai);
                  Display();
                  goto menu;
         case 6 : cout<<"\n\nTERIMA KASIH ^^\n";
                  exit(0);
+        default : cout<<"Salah kode!\n\n";
+                 goto menu;
     }
     return 0;
 }
