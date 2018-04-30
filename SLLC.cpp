@@ -5,7 +5,7 @@ struct node{
     int data;
     node *next;
 };
-    node *head;
+    node *head, *tail;
 
 int isEmpty() {
 	if (head == NULL)
@@ -28,18 +28,6 @@ void InsFront(int nilai){
     cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
 }
 
-void Display(){
-    node *baru=new node;
-    baru=head;
-    if (isEmpty()==0){
-        cout<<"\n\n Data yang ada dalam list \n\n";
-    while(baru!=NULL){
-        cout<<baru->data<<" ";
-        baru=baru->next;
-        }
-    }
-}
-
 void InsBack(int nilai){
     node *baru, *bantu;
     baru=new node;
@@ -56,6 +44,19 @@ void InsBack(int nilai){
         bantu->next=baru;
     }
     cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+}
+
+void Display(){
+    node *baru=new node;
+    baru=head;
+    if (isEmpty()==0){
+        cout<<"\n\n Data yang ada dalam list \n\n";
+    while(baru!=NULL){
+        cout<<baru->data<<" ";
+        baru=baru->next;
+        }
+    }
+    cout<<endl<<endl;
 }
 
 void DelFront()
@@ -93,4 +94,40 @@ void InsertPos(int letak, int nilai){
     baru->data=nilai;
     before->next=baru;
     baru->next=after;
+
+    cout<<"\n\n Data "<<nilai<<" dimasukkan ke dalam list \n\n";
+}
+
+int main (){
+    menu:
+    cout<<"LINKED LIST\n\n";
+    cout<<"1. Insert Depan\n";
+    cout<<"2. Insert Belakang\n";
+    cout<<"3. Hapus Depan\n";
+    cout<<"4. Hapus Belakang\n";
+    cout<<"5. Insert Sesuai letak\n";
+    cout<<"6. Tampilkan Data\n\n";
+    int pil;
+    int nilai, letak;
+    cout<<"Masukkan Pilihan = ";cin>>pil;
+    switch (pil){
+        case 1 : cout<<"Masukkan data = ";
+                 cin>>nilai;
+                 InsFront(nilai);
+                 goto menu;
+        case 2 : cout<<"Masukkan data = ";
+                 cin>>nilai;
+                 InsBack(nilai);
+                 goto menu;
+        case 3 : DelFront();
+                 goto menu;
+        case 4 : DelBack();
+                 goto menu;
+        case 5 : cout<<"Masukkan Letak = ";cin>>letak;
+                 cout<<"Masukkan Nilai = ";cin>>nilai;
+                 InsertPos(letak,nilai);
+                 goto menu;
+        case 6 : Display();
+                 goto menu;
+    }
 }
