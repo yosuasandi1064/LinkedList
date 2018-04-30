@@ -26,7 +26,6 @@ void InsFront(int nilai){
     }
 
 }
-
 int main (){
     int nilai;
     InsFront(nilai);
