@@ -3,6 +3,7 @@
   Yosua Sandi Susanto     - 1717051064
   Lofanny Wahyu Dandi     - 1757051010
   */
+
 #include <iostream>
 using namespace std;
 
@@ -110,6 +111,7 @@ int main (){
     cout<<"3. Hapus Depan\n";
     cout<<"4. Hapus Belakang\n";
     cout<<"5. Insert Sesuai letak\n";
+    cout<<"6. Keluar Program\n";
     menu:
     int pil;
     int nilai, letak;
@@ -139,5 +141,5 @@ int main (){
                  Display();
                  goto menu;
     }
-    return 0;
+    while (pil != 6);
 }
