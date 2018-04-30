@@ -58,6 +58,14 @@ void InsBack(int nilai){
     cout<<"\n\n Data dimasukkan ke dalam list \n\n";
 }
 
+ void DelFront()
+  {
+    node *baru=new node;
+    baru=head;
+    head=head->next;
+    delete baru;
+  }
+
 int main (){
     int nilai;
     InsFront(nilai);
