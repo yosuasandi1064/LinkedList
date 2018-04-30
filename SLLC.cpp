@@ -40,6 +40,24 @@ void Display(){
         cout<<"masih kosong";
 }
 
+void InsBack(int nilai){
+    node *baru, *bantu;
+    baru=new node;
+    baru->data=nilai;
+    baru->next=NULL;
+    if(isEmpty()==1){
+        head=baru;
+        head->next=NULL;
+    }else{
+        bantu=head;
+        while(bantu->next!=NULL){
+            bantu=bantu->next;
+        }
+        bantu->next=baru;
+    }
+    cout<<"\n\n Data dimasukkan ke dalam list \n\n";
+}
+
 int main (){
     int nilai;
     InsFront(nilai);
